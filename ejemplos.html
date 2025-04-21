@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplos - Polinomios</title>
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f4e3;
+            margin: 0;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .ejemplo, .quiz {
+            background: #fffbea;
+            border: 2px solid #FFD700;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+            .quiz label {
+                display: block;
+                margin-top: 8px;
+            }
+
+        .resultado {
+            margin-top: 10px;
+            font-weight: bold;
+            color: green;
+        }
+
+        button {
+            margin-top: 10px;
+            background-color: #FFD700;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: #B8860B;
+        }
+
+        .solucion {
+            margin-top: 10px;
+            display: none;
+        }
+
+        .link-ayuda {
+            color: red;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ejemplos de Polinomios</h1>
+    </header>
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="teoria.html">Teoría</a></li>
+            <li><a href="ejemplos.html">Ejemplos</a></li>
+            <li><a href="juegos.html">Juegos</a></li>
+            <li><a href="videos.html">Videos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- MONOMIO -->
+        <section class="ejemplo">
+            <h2>🔹 Monomio</h2>
+            <p><strong>Ejemplo:</strong> Resuelve: <code>4x * 2x²</code></p>
+            <button onclick="mostrarSolucion('solMonomio')">🔍 Ver solución</button>
+            <div id="solMonomio" class="solucion">
+                <p><strong>Solución:</strong> Multiplicamos coeficientes y sumamos exponentes:</p>
+                <p>4 × 2 = 8, x × x² = x³ ⇒ <strong>Resultado: 8x³</strong></p>
+            </div>
+        </section>
+
+        <section class="quiz">
+            <h3>🧠 Quiz Monomio</h3>
+            <p>¿Cuál es el resultado de <code>3a * 5a²</code>?</p>
+            <label><input type="radio" name="monomio" value="a" />15a³</label>
+            <label><input type="radio" name="monomio" value="b" />8a²</label>
+            <label><input type="radio" name="monomio" value="c" />15a²</label>
+            <button onclick="quiz('monomio', 'a', 'res1')">Verificar</button>
+            <div id="res1" class="resultado"></div>
+        </section>
+
+        <!-- BINOMIO -->
+        <section class="ejemplo">
+            <h2>🔸 Binomio</h2>
+            <p><strong>Ejemplo:</strong> Resuelve: <code>(x + 3)(x + 2)</code></p>
+            <button onclick="mostrarSolucion('solBinomio')">🔍 Ver solución</button>
+            <div id="solBinomio" class="solucion">
+                <p><strong>Solución:</strong> Aplicamos la propiedad distributiva:</p>
+                <p>x² + 2x + 3x + 6 = <strong>x² + 5x + 6</strong></p>
+            </div>
+        </section>
+
+        <section class="quiz">
+            <h3>🧠 Quiz Binomio</h3>
+            <p>¿Cuál es el resultado de <code>(x + 4)(x + 1)</code>?</p>
+            <label><input type="radio" name="binomio" value="a" />x² + 5x + 4</label>
+            <label><input type="radio" name="binomio" value="b" />x² + 4x + 1</label>
+            <label><input type="radio" name="binomio" value="c" />x² + 3x + 2</label>
+            <button onclick="quiz('binomio', 'a', 'res2')">Verificar</button>
+            <div id="res2" class="resultado"></div>
+        </section>
+
+        <!-- TRINOMIO -->
+        <section class="ejemplo">
+            <h2>🔺 Trinomio</h2>
+            <p><strong>Ejemplo:</strong> Factoriza <code>x² + 5x + 6</code></p>
+            <button onclick="mostrarSolucion('solTrinomio')">🔍 Ver solución</button>
+            <div id="solTrinomio" class="solucion">
+                <p><strong>Solución:</strong> Buscamos dos números que sumen 5 y den 6 al multiplicar: 2 y 3.</p>
+                <p>Resultado: <strong>(x + 2)(x + 3)</strong></p>
+            </div>
+        </section>
+
+        <section class="quiz">
+            <h3>🧠 Quiz Trinomio</h3>
+            <p>¿Cuál es la factorización de <code>x² + 7x + 12</code>?</p>
+            <label><input type="radio" name="trinomio" value="a" />(x + 4)(x + 3)</label>
+            <label><input type="radio" name="trinomio" value="b" />(x + 6)(x + 2)</label>
+            <label><input type="radio" name="trinomio" value="c" />(x + 5)(x + 2)</label>
+            <button onclick="quiz('trinomio', 'a', 'res3')">Verificar</button>
+            <div id="res3" class="resultado"></div>
+        </section>
+
+        <!-- POLINOMIO -->
+        <section class="ejemplo">
+            <h2>🟩 Polinomio</h2>
+            <p><strong>Ejemplo:</strong> Suma: <code>(2x³ + x² + 3x + 1) + (x³ - 2x + 4)</code></p>
+            <button onclick="mostrarSolucion('solPolinomio')">🔍 Ver solución</button>
+            <div id="solPolinomio" class="solucion">
+                <p><strong>Solución:</strong> Sumamos términos semejantes:</p>
+                <p>2x³ + x³ = 3x³, x², 3x - 2x = x, 1 + 4 = 5</p>
+                <p><strong>Resultado: 3x³ + x² + x + 5</strong></p>
+            </div>
+        </section>
+
+        <section class="quiz">
+            <h3>🧠 Quiz Polinomio</h3>
+            <p>¿Cuál es el resultado de: <code>(x³ + 2x + 3) + (2x³ - x + 1)</code>?</p>
+            <label><input type="radio" name="poli" value="a" />3x³ + x + 4</label>
+            <label><input type="radio" name="poli" value="b" />3x³ + x + 2</label>
+            <label><input type="radio" name="poli" value="c" />2x³ + x + 4</label>
+            <button onclick="quiz('poli', 'a', 'res4')">Verificar</button>
+            <div id="res4" class="resultado"></div>
+        </section>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="index.html"><button>🔙 Volver al INICIO</button></a>
+        </div>
+    </main>
+
+    <script>
+        function quiz(nombre, correcta, id) {
+            const opciones = document.getElementsByName(nombre);
+            let seleccion = '';
+            for (const o of opciones) {
+                if (o.checked) seleccion = o.value;
+            }
+
+            const resultadoDiv = document.getElementById(id);
+            resultadoDiv.innerHTML = '';
+
+            if (seleccion === correcta) {
+                resultadoDiv.innerHTML = '✅ ¡Correcto!';
+            } else {
+                for (const o of opciones) o.disabled = true;
+
+                let videoLink = '';
+                switch (nombre) {
+                    case 'monomio':
+                        videoLink = 'https://www.youtube.com/watch?v=epsasFCsJ9A';
+                        break;
+                    case 'binomio':
+                        videoLink = 'https://www.youtube.com/watch?v=WsLxwEHznvE';
+                        break;
+                    case 'trinomio':
+                        videoLink = 'https://www.youtube.com/watch?v=TKo7NtIilWM';
+                        break;
+                    case 'poli':
+                        videoLink = 'https://www.youtube.com/watch?v=ueJtyB2Hg2I';
+                        break;
+                }
+
+                resultadoDiv.innerHTML = `
+                        ❌ Respuesta incorrecta.<br>
+                        <a class="link-ayuda" href="${videoLink}" target="_blank">
+                            🔗 Revisa este video para reforzar el tema
+                        </a>
+                    `;
+            }
+        }
+
+        function mostrarSolucion(id) {
+            const div = document.getElementById(id);
+            div.style.display = div.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+
+    <footer>
+        © 2025 Unidad Educativa Oxford - Proyecto Didáctico de Matemáticas
+    </footer>
+</body>
+</html>
